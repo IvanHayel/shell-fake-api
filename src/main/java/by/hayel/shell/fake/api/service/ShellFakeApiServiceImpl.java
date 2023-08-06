@@ -31,8 +31,8 @@ public class ShellFakeApiServiceImpl implements ShellFakeApiService {
   @Override
   public Response getFakeRecentTransactions(TransactionsRequest request) {
     var response = new TransactionsResponse();
-    response.setRequestId(request.RequestID);
-    response.setColcoCountryCode(request.ColcoCountryCode);
+    response.setRequestId(request.getRequestId());
+    response.setColcoCountryCode(request.getCountryCode());
     response.setStatus("Success");
     response.setRecordCount(FAKER.number().numberBetween(0, 100));
     var transactions = new TransactionsResponse.Transaction[response.getRecordCount()];
